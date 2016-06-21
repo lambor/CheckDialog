@@ -101,23 +101,23 @@ public class CheckDialog extends Dialog {
         this.resultListener = listener;
     }
 
-    private void setMessageListener(final String msg, final Activity activity){
+    private void setMessageListener(final String msg, final Context context){
         setResultListener(new OnResultListener() {
             @Override
             public void onResult() {
 //                new MessageBar(activity).show(msg);
-                Toast.makeText(activity,msg,Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void OnOk(String msg,Activity activity){
-        setMessageListener(msg,activity);
+    public void OnOk(String msg,Context context){
+        setMessageListener(msg,context);
         OnOk();
     }
 
-    public void OnError(String msg,Activity activity){
-        setMessageListener(msg,activity);
+    public void OnError(String msg,Context context){
+        setMessageListener(msg,context);
         OnError();
     }
 }
